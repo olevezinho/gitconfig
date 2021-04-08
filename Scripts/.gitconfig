@@ -1,0 +1,21 @@
+[user]
+	name = Luis Filipe Costa
+	email = lfilipecosta3@gmail.com
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+[core]
+	editor = code
+[alias]
+	hist = log --all --graph --decorate --oneline
+# using VS Code as the default mergetool and difftool
+[merge]
+    tool = vscode
+[mergetool "vscode"]
+    cmd = code --wait $MERGED
+[diff]
+    tool = default-difftool
+[difftool "default-difftool"]
+    cmd = code --wait --diff $LOCAL $REMOTE
