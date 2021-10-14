@@ -1,6 +1,6 @@
 #!/bin/bash
 
-. /home/merkle-filipe/source/repos/gitconfig/Scripts/select-files-to-add.bash
+. <replace-by-full-filepath-to>/select-files-to-add.bash
 
 # Sync and push the changes to the repository
 basic_git_operations() {
