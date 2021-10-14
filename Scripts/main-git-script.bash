@@ -1,6 +1,6 @@
 #!/bin/bash
 
-. /home/merkle-filipe/source/repos/gitconfig/Scripts/basic-git-operations.bash
+. <replace-by-full-filepath-to>/basic-git-operations.bash
 
 # Execute the flow
 main() { 
