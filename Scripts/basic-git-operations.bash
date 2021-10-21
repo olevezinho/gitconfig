@@ -16,9 +16,9 @@ basic_git_operations() {
             select_files_to_add
             read -p "What's the message you desire to type? " MESSAGE
             git commit -m "$MESSAGE"
-            read -p "What's the name of the current active branch? " MYBRANCH
+            #read -p "What's the name of the current active branch? " MYBRANCH
             read -p "What's the name of the destination branch? " REPOBRANCH
-            git push -u $REPOBRANCH $MYBRANCH
+            git push -u origin $REPOBRANCH #$MYBRANCH
         else
             echo "Hope to see you again!"
         fi
