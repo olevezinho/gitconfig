@@ -11,8 +11,6 @@ main() {
     then
         # Resume the flow
         ACTIVE_BRANCH=`git status | awk '{print $3}' | awk 'FNR == 1'`
-        # Execute basic_git_operations
-        basic_git_operations
         # Use the name of the branch
         if [[ "$ACTIVE_BRANCH" != "$MAIN_BRANCH" ]];
         then
@@ -26,7 +24,8 @@ main() {
             exit 0
         else 
         # else, everything is ok
-            exit 0
+            basic_git_operations
+	    exit 0
         fi
     else
         echo "You've got no changes!"
