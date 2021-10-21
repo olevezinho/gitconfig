@@ -21,7 +21,7 @@ main() {
 	    git checkout $ACTIVE_BRANCH
             git merge $MAIN_BRANCH
             basic_git_operations
-	    create_pull_request $MAIN_BRANCH $ACTIVE_BRANCH
+	    create_pull_request "$MAIN_BRANCH" "$ACTIVE_BRANCH"
             exit 0
         else 
         # else, everything is ok
