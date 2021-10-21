@@ -24,7 +24,9 @@ main() {
             exit 0
         else 
         # else, everything is ok
+            git pull
             basic_git_operations
+            echo "No need for a pull request!"
 	    exit 0
         fi
     else

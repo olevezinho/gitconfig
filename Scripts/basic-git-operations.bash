@@ -4,12 +4,7 @@
 
 # Sync and push the changes to the repository
 basic_git_operations() {
-    git pull
 
-    if [ $? -ne 0 ];
-    then
-        echo "You are not in the proper directory"
-    else
         read -p "Do you want to commit and push your changes (y/n)? " ANSWER
         if [ $ANSWER == 'y' ] || [ $ANSWER == 'Y' ];
         then
@@ -22,5 +17,4 @@ basic_git_operations() {
         else
             echo "Hope to see you again!"
         fi
-    fi
 }
