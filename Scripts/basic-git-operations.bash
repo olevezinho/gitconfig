@@ -1,24 +1,22 @@
 #!/bin/bash
 
-. /home/merkle-filipe/source/repos/gitconfig/Scripts/select-files-to-add.bash
-
 # Sync and push the changes to the repository
 basic_git_operations() {
+    # pull changes before committing them
     git pull
-
+    # evaluate return status of last command
     if [ $? -ne 0 ];
     then
-        echo "You are not in the proper directory"
+       echo "You are not in the proper directory"
     else
         read -p "Do you want to commit and push your changes (y/n)? " ANSWER
-        if [ $ANSWER == 'y' ] || [ $ANSWER == 'Y' ];
+        if [ $ANSWER == 'y' ];
         then
-            select_files_to_add
+            echo "You're about to push your changes"
+            git add .
             read -p "What's the message you desire to type? " MESSAGE
             git commit -m "$MESSAGE"
-            #read -p "What's the name of the current active branch? " MYBRANCH
-            read -p "What's the name of the destination branch? " REPOBRANCH
-            git push -u origin $REPOBRANCH #$MYBRANCH
+            git push -u origin $1
         else
             echo "Hope to see you again!"
         fi
