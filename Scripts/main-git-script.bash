@@ -20,18 +20,8 @@ main() {
         then
         # If the branch names don't match, push changes. Then do a checkout to main branch, perform pull. 
         # After that, checkout to previous branch, and merge main branch into current branch
-            read -p "Do you want to commit and push your changes (y/n)? " ANSWER
-            if [ $ANSWER == 'y' ];
-            then
-                echo "You're about to push your changes"
-                git add .
-                read -p "What's the message you desire to type? " MESSAGE
-                git commit -m "$MESSAGE"
-                git push -u origin $ACTIVE_BRANCH
-            else
-                    echo "Hope to see you again!"
-            fi
             Flag='false'
+            basic_git_operations $Flag $ACTIVE_BRANCH
             git checkout $MAIN_BRANCH
             git pull
             git checkout $ACTIVE_BRANCH
